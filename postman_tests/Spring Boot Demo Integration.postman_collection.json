@@ -1,0 +1,352 @@
+{
+	"id": "679e1c02-b165-326a-70f7-d2d450a92987",
+	"name": "Spring Boot Demo Integration",
+	"description": "",
+	"order": [
+		"342d8c5f-050a-1689-253b-d99dc2a22650",
+		"44ad8d72-9444-2d20-6421-2e21f005c3b9",
+		"dc6557ec-43b5-2515-491b-70b132d6cb20",
+		"ccbac300-86ec-80d6-405a-bd06ab3da758",
+		"b65b9f07-43f0-de15-1a9a-867871039583",
+		"c9a0f2a9-01fb-af38-f8c8-6f338c41f5b2",
+		"07dedf88-bf07-7c91-e555-66f92ebc15af"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1515707595345,
+	"owner": "3019035",
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "07dedf88-bf07-7c91-e555-66f92ebc15af",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/patchForItem/2",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5c636b1b-78f1-43ab-b5ed-9fa9de15e0ba",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.have.status(404); ",
+							"});"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1515709234868,
+			"name": "Patch for one item not found test",
+			"description": "",
+			"collectionId": "679e1c02-b165-326a-70f7-d2d450a92987",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"response must be valid and have a body\", function () {\n     pm.response.to.have.status(404); \n});",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n\t\"title\" : \"title 1\",\n\t\"description\" : \"title 1 description\",\n\t\"date\" : \"1000\"\n}"
+		},
+		{
+			"id": "342d8c5f-050a-1689-253b-d99dc2a22650",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e7f46c2c-8672-4f14-a945-95aff1bc8138",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.have.status(201); ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});"
+						]
+					}
+				}
+			],
+			"auth": null,
+			"method": "POST",
+			"collectionId": "679e1c02-b165-326a-70f7-d2d450a92987",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Post new item request test",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1515707967062,
+			"version": 2,
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"response must be valid and have a body\", function () {\n     pm.response.to.have.status(201); \n     pm.response.to.be.withBody;\n     pm.response.to.be.json;\n});",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n\t\"title\" : \"title 0\",\n\t\"description\" : \"title 0 description\",\n\t\"date\" : \"0000\"\n}"
+		},
+		{
+			"id": "44ad8d72-9444-2d20-6421-2e21f005c3b9",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/getItem/0",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d7a6b079-c0b4-4785-81c5-57d5b3afb7ec",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.have.status(200); ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});"
+						]
+					}
+				}
+			],
+			"auth": null,
+			"method": "GET",
+			"collectionId": "679e1c02-b165-326a-70f7-d2d450a92987",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Get one item test",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1515708077289,
+			"version": 2,
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"response must be valid and have a body\", function () {\n     pm.response.to.have.status(200); \n     pm.response.to.be.withBody;\n     pm.response.to.be.json;\n});",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n\t\"title\" : \"title 1\",\n\t\"description\" : \"title 1 description\",\n\t\"date\" : \"1000\"\n}"
+		},
+		{
+			"id": "b65b9f07-43f0-de15-1a9a-867871039583",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ff3a5171-3d77-4bf4-b1c3-45555bc14486",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			],
+			"auth": null,
+			"method": "POST",
+			"collectionId": "679e1c02-b165-326a-70f7-d2d450a92987",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Post new item fail bad request test",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1515708288626,
+			"version": 2,
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"response must be valid and have a body\", function () {\n     pm.response.to.have.status(400);\n});",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n\t\"tit\" : \"title 0\",\n\t\"descripti\" : \"title 0 description\",\n\t\"date\" : \"0000\"\n}"
+		},
+		{
+			"id": "c9a0f2a9-01fb-af38-f8c8-6f338c41f5b2",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/getItem/2",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e044587d-117e-42d6-8f36-e73ae236a483",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.have.status(404);",
+							"});"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1515709230893,
+			"name": "Get new item not found test",
+			"description": "",
+			"collectionId": "679e1c02-b165-326a-70f7-d2d450a92987",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"response must be valid and have a body\", function () {\n     pm.response.to.have.status(404);\n});",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n\t\"tit\" : \"title 0\",\n\t\"descripti\" : \"title 0 description\",\n\t\"date\" : \"0000\"\n}"
+		},
+		{
+			"id": "ccbac300-86ec-80d6-405a-bd06ab3da758",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/patchForItem/0",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c10cb965-22a9-4b49-8fb5-135c893208ad",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.have.status(201); ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});"
+						]
+					}
+				}
+			],
+			"auth": null,
+			"method": "PATCH",
+			"collectionId": "679e1c02-b165-326a-70f7-d2d450a92987",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Patch for one item test",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1515708199713,
+			"version": 2,
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"response must be valid and have a body\", function () {\n     pm.response.to.have.status(201); \n     pm.response.to.be.withBody;\n     pm.response.to.be.json;\n});",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n\t\"title\" : \"title 0\",\n\t\"description\" : \"title 0 description\",\n\t\"date\" : \"5000\"\n}"
+		},
+		{
+			"id": "dc6557ec-43b5-2515-491b-70b132d6cb20",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/api/getAllItems",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d7a6b079-c0b4-4785-81c5-57d5b3afb7ec",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"     pm.response.to.have.status(200); ",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});"
+						]
+					}
+				}
+			],
+			"auth": null,
+			"method": "GET",
+			"collectionId": "679e1c02-b165-326a-70f7-d2d450a92987",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Get all items test",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1515708134597,
+			"version": 2,
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"response must be valid and have a body\", function () {\n     pm.response.to.have.status(200); \n     pm.response.to.be.withBody;\n     pm.response.to.be.json;\n});",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n\t\"title\" : \"title 1\",\n\t\"description\" : \"title 1 description\",\n\t\"date\" : \"1000\"\n}"
+		}
+	]
+}
